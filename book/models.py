@@ -6,11 +6,14 @@ class Book(models.Model):
         SOFT = "SOFT", "Softcover"
 
     author = models.CharField(max_length=100)
-    year_of_the_book = models.IntegerField()
-    title = models.CharField(max_length=255)
+    year_of_the_book = models.IntegerField(null=True, blank=True)
+    title = models.CharField(max_length=255, null=True, blank=True)
 
     cover = models.CharField(
         max_length=4,
         choices=CoverChoices.choices,
         default=CoverChoices.HARD
         )
+
+    inventory = models.PositiveIntegerField(default=0)
+
