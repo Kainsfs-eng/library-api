@@ -1,4 +1,5 @@
-from django.db import models
+from django.forms import models
 
-# Create your models here.
 
+class Book(models.Model):
+    pass
